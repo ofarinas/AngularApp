@@ -18,8 +18,8 @@ export function reducer(state = initialState, action: UserAction) {
 function login(state: AppState, action: UserAction) {
   console.log('state', state);
   console.log('action', action);
-  state.user = new User();
-  state.user = action.payload;
-  state.user.login = true;
+  state.user = action.payload.user;
+  state.login = true;
+  action.payload.router.navigate(['task']);
   return state
 }
