@@ -1,7 +1,6 @@
 // counter.ts
 import {AppState} from "../model/appState";
 import {UserAction} from "../model/UserAction";
-import {User} from "../model/login";
 
 export const LOGIN = 'LOGIN';
 export const initialState: AppState = new AppState();
