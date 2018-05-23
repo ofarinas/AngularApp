@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  user: User;
+   user: User;
 
   constructor(private store: Store<AppState>, private router: Router) {
     this.user = new User();
