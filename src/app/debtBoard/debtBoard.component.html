@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="#">Samay</a>
@@ -12,7 +13,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-success  my-2 my-sm-0" type="submit">Add</button>
+      <button class="btn btn-success  my-2 my-sm-0" data-toggle="modal" data-target="#exampleModal">Add</button>
     </form>
   </div>
 </nav>
@@ -24,28 +25,17 @@
     <th scope="col">#</th>
     <th scope="col">Name</th>
     <th scope="col">Amaunt</th>
-    <th scope="col">Edit Amount</th>
-    <th scope="col">payed</th>
+    <th scope="col">Payed</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td>Otto</td>
+  <tr *ngFor="let debt of debts; let i=index">
+    <th scope="row">{{i}}</th>
+    <td>{{debt.person.name}}</td>
+    <td>{{debt.amount}}</td>
+    <td><button><button type="button" class="btn btn-primary">payed</button></button></td>
     <td>@mdo</td>
   </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Jacob</td>
-    <td>Thornton</td>
-    <td>@fat</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>Larry</td>
-    <td>the Bird</td>
-    <td>@twitter</td>
-  </tr>
   </tbody>
+  <addPerson></addPerson>
 </table>

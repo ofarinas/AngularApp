@@ -10,18 +10,19 @@ import {FormsModule} from "@angular/forms";
 import {reducer} from "./reducer/reducer";
 import {StoreModule} from "@ngrx/store";
 import {LoginComponent} from "./login/login.component";
-import {TaskComponent} from "./task/task.component";
+import {DebtBoardComponent} from "./debtBoard/debtBoard.component";
+import {AddPersonComponent} from "./addPerson/addPerson.component";
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'task', component: TaskComponent},
+  {path: 'task', component: DebtBoardComponent},
   {path: '**', component: LoginComponent}
 
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, TaskComponent
+    AppComponent, LoginComponent, DebtBoardComponent, AddPersonComponent
 
   ],
   imports: [
