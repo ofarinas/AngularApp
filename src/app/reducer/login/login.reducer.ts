@@ -1,7 +1,5 @@
 import {UserAction} from "../../model/UserAction";
 import {AppState} from "../../model/appState";
-import {Debt} from "../../model/Debt";
-
 
 function validateLogin(state: AppState) {
   if (state.user.email === 'adminSamay' && state.user.password === 'adminSamay') {
@@ -16,12 +14,12 @@ export function login(state: AppState, action: UserAction) {
   state.user = action.payload.user;
   state.login = validateLogin(state);
   if (state.login) {
-    state.debts = getDebts();
+    state.persons = getPersons();
     action.payload.router.navigate(['task']);
   }
   return state
 }
 
-function getDebts() {
-  return !!JSON.parse(localStorage.getItem('debts')) ? JSON.parse(localStorage.getItem('debts')) : [];
+function getPersons() {
+  return !!JSON.parse(localStorage.getItem('persons')) ? JSON.parse(localStorage.getItem('persons')) : [];
 }

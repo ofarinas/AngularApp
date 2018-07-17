@@ -31,7 +31,7 @@ const appRoutes: Routes = [
       appRoutes
     ),
     FormsModule,
-    StoreModule.forRoot({reducer: reducer})
+    StoreModule.forRoot({reducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

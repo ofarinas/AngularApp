@@ -1,3 +1,4 @@
 export class Person {
-  public name: string
+  public constructor(public name?: string, public amountOfDebt?: number) {
+  }
 }

@@ -1,7 +1,8 @@
 import {User} from "./login";
+import {Person} from "./Person";
 
 export class AppState {
   login: boolean;
   user: User;
-  debts: any[];
+  persons: Person[] = [];
 }

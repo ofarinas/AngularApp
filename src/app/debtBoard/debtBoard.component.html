@@ -24,22 +24,25 @@
   <tr>
     <th scope="col">#</th>
     <th scope="col">Name</th>
-    <th scope="col">Amaunt</th>
-    <th scope="col">Payed</th>
+    <th scope="col">Amount</th>
+    <th scope="col">more</th>
+    <th scope="col">pay</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let debt of debts; let i=index">
-    <th scope="row">{{i}}</th>
-    <td>{{debt.person.name}}</td>
-    <td>{{debt.amount}}</td>
+  <tr *ngFor="let person of persons, let i = index ">
+    <th scope="row">{{i+1}}</th>
+    <td>{{person.name }}</td>
+    <td>{{person.amountOfDebt }}</td>
     <td>
-      <button>
-        <button type="button" class="btn btn-primary">payed</button>
-      </button>
+      <button type="button" class="btn btn-primary">+</button>
     </td>
-    <td>@mdo</td>
+    <td>
+      <button type="button" class="btn btn-success">pay</button>
+    </td>
+
   </tr>
   </tbody>
-  <addPerson></addPerson>
 </table>
+<addPerson></addPerson>
+
