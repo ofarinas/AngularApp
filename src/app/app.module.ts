@@ -12,6 +12,8 @@ import {StoreModule} from "@ngrx/store";
 import {LoginComponent} from "./login/login.component";
 import {DebtBoardComponent} from "./debtBoard/debtBoard.component";
 import {AddPersonComponent} from "./addPerson/addPerson.component";
+import {RemovePersonComponent} from "./removePerson/removePerson.component";
+import {EditPersonComponent} from "./editPerson/editPerson.component";
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -22,7 +24,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, DebtBoardComponent, AddPersonComponent
+    AppComponent, LoginComponent, DebtBoardComponent, AddPersonComponent, RemovePersonComponent, EditPersonComponent
 
   ],
   imports: [

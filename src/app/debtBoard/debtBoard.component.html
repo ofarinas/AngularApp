@@ -35,14 +35,17 @@
     <td>{{person.name }}</td>
     <td>{{person.amountOfDebt }}</td>
     <td>
-      <button type="button" class="btn btn-primary">+</button>
+      <button type="button" class="btn btn-primary"(click)="showEditDialog(i)" >more</button>
     </td>
     <td>
-      <button type="button" class="btn btn-success">pay</button>
+      <button type="button" class="btn btn-success" ata-toggle="modal" data-target="removeModal"
+              (click)="showDeleteDialog(i)">Done
+      </button>
     </td>
 
   </tr>
   </tbody>
 </table>
 <addPerson></addPerson>
-
+<removePerson></removePerson>
+<editPerson></editPerson>

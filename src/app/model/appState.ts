@@ -5,4 +5,5 @@ export class AppState {
   login: boolean;
   user: User;
   persons: Person[] = [];
+  index: number
 }

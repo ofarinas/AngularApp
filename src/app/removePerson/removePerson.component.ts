@@ -1,25 +1,31 @@
 import {Component} from "@angular/core";
-import {Person} from "../model/Person";
 import {AppState} from "../model/appState";
 import {Store} from "@ngrx/store";
 
 @Component({
-  selector: 'addPerson',
-  templateUrl: './addPerson.component.html'
+  selector: 'removePerson',
+  templateUrl: './removePerson.component.html'
 })
 
 
-export class AddPersonComponent {
+export class RemovePersonComponent {
+  public indexPerson: number;
+  public name: string;
 
-  public person: Person;
 
   public constructor(private store: Store<AppState>) {
-    this.person = new Person();
+    this.store.subscribe(item => {
+      this.indexPerson = item['reducer'].index;
+      console.log('index', this.indexPerson);
+      if (this.checkIndex(item)) this.name = item['reducer'].persons[this.indexPerson].name;
+    })
   }
 
-  addPerson() {
-    console.log(this.person.name);
-    this.store.dispatch({type: "ADD_PERSON", payload: this.person});
-    this.person = new Person();
+  private checkIndex(item) {
+    return this.indexPerson >= 0 && item['reducer'].persons[this.indexPerson];
+  }
+
+  removePerson() {
+    this.store.dispatch({type: "REMOVE_PERSON", payload: this.indexPerson});
   }
 }
