@@ -9,7 +9,7 @@ declare var $: any;
 @Component({selector: 'task', templateUrl: 'debtBoard.component.html'})
 export class DebtBoardComponent {
   public persons: Person[];
-  public personsArray: string[];
+  public search: string;
 
   public constructor(private store: Store<AppState>) {
     this.store.subscribe(item => {
@@ -26,4 +26,6 @@ export class DebtBoardComponent {
     this.store.dispatch({type: 'SET_INDEX', payload: index});
     $('#editModal').modal('show');
   }
+
 }
+

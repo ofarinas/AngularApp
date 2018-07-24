@@ -14,6 +14,7 @@ import {DebtBoardComponent} from "./debtBoard/debtBoard.component";
 import {AddPersonComponent} from "./addPerson/addPerson.component";
 import {RemovePersonComponent} from "./removePerson/removePerson.component";
 import {EditPersonComponent} from "./editPerson/editPerson.component";
+import {PersonPipe} from "./pipe/personPipe";
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -24,7 +25,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, DebtBoardComponent, AddPersonComponent, RemovePersonComponent, EditPersonComponent
+    AppComponent, LoginComponent, DebtBoardComponent, AddPersonComponent, RemovePersonComponent, EditPersonComponent, PersonPipe
 
   ],
   imports: [

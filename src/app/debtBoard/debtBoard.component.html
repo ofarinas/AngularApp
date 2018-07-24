@@ -12,7 +12,8 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" [(ngModel)]="search"
+             name="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-success  my-2 my-sm-0" data-toggle="modal" data-target="#exampleModal">Add</button>
     </form>
   </div>
@@ -30,12 +31,12 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let person of persons, let i = index ">
+  <tr *ngFor="let person of persons| personPipe:search, let i = index ">
     <th scope="row">{{i+1}}</th>
     <td>{{person.name }}</td>
     <td>{{person.amountOfDebt }}</td>
     <td>
-      <button type="button" class="btn btn-primary"(click)="showEditDialog(i)" >more</button>
+      <button type="button" class="btn btn-primary" (click)="showEditDialog(i)">Edit</button>
     </td>
     <td>
       <button type="button" class="btn btn-success" ata-toggle="modal" data-target="removeModal"
