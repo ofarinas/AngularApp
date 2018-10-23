@@ -1,11 +1,12 @@
-import {Component} from "@angular/core";
+import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {Person} from "../model/Person";
 import {AppState} from "../model/appState";
 import {Store} from "@ngrx/store";
 
 @Component({
   selector: 'addPerson',
-  templateUrl: './addPerson.component.html'
+  templateUrl: './addPerson.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 

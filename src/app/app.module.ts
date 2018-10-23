@@ -8,13 +8,16 @@ import {FormsModule} from "@angular/forms";
 
 
 import {reducer} from "./reducer/reducer";
-import {StoreModule} from "@ngrx/store";
 import {LoginComponent} from "./login/login.component";
 import {DebtBoardComponent} from "./debtBoard/debtBoard.component";
 import {AddPersonComponent} from "./addPerson/addPerson.component";
 import {RemovePersonComponent} from "./removePerson/removePerson.component";
 import {EditPersonComponent} from "./editPerson/editPerson.component";
 import {PersonPipe} from "./pipe/personPipe";
+import {StoreModule} from '@ngrx/store';
+import {EffectsModule} from '@ngrx/effects';
+import {AuthEffects} from './effects/auth-effect';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -26,14 +29,15 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, DebtBoardComponent, AddPersonComponent, RemovePersonComponent, EditPersonComponent, PersonPipe
-
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes
     ),
     FormsModule,
+    EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot({reducer})
   ],
   providers: [],
