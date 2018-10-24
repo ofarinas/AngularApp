@@ -16,7 +16,7 @@ import {EditPersonComponent} from "./editPerson/editPerson.component";
 import {PersonPipe} from "./pipe/personPipe";
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
-import {AuthEffects} from './effects/auth-effect';
+import {LoginEffects} from './effects/login-effect';
 import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
@@ -37,7 +37,7 @@ const appRoutes: Routes = [
       appRoutes
     ),
     FormsModule,
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([LoginEffects]),
     StoreModule.forRoot({reducer})
   ],
   providers: [],

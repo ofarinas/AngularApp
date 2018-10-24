@@ -5,7 +5,7 @@ import {login} from "./login/login.reducer";
 import {addPerson} from "./addPerson/addPerson";
 
 export const LOGIN = 'LOGIN';
-export const GET_LOGIN = 'LOGIN';
+export const LOGIN_SUCCESSFUL = 'LOGIN_SUCCESSFUL';
 export const ADD_PERSON = 'ADD_PERSON';
 export const SET_INDEX = 'SET_INDEX';
 export const REMOVE_PERSON = 'REMOVE_PERSON';
@@ -14,13 +14,13 @@ export const initialState: AppState = new AppState();
 
 
 
-export async function reducer(state = initialState, action: UserAction) {
+export function reducer(state = initialState, action: UserAction) {
   // log(state, action);
   switch (action.type) {
-    case LOGIN:
+    case LOGIN_SUCCESSFUL:
       return login(state, action);
     case ADD_PERSON:
-      return await addPerson(state, action);
+      return addPerson(state, action);
     case SET_INDEX:
       return setIndex(state, action);
     case REMOVE_PERSON:
