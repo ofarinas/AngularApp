@@ -8,6 +8,7 @@ import {tap} from 'rxjs/internal/operators';
 import {LOGIN, LOGIN_SUCCESSFUL} from '../reducer/reducer';
 import {Router} from '@angular/router';
 import {UserAction} from '../model/UserAction';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class LoginEffects {
@@ -16,7 +17,7 @@ export class LoginEffects {
   login$: Observable<Action> = this.actions$.pipe(
     ofType(LOGIN),
     mergeMap((action: any) =>
-      this.http.post('http://localhost:3000/login', action.payload.user)
+      this.http.post(environment.api.login, action.payload.user)
         .pipe(
           tap(data => this.routeToTask(data)),
           map(data => (<UserAction>{type: LOGIN_SUCCESSFUL, payload: data})),
@@ -30,5 +31,6 @@ export class LoginEffects {
   }
 
   constructor(private http: HttpClient, private actions$: Actions, public router: Router) {
+
   }
 }
